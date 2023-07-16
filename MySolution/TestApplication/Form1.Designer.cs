@@ -46,6 +46,7 @@
             textSearch.Name = "textSearch";
             textSearch.Size = new Size(338, 23);
             textSearch.TabIndex = 0;
+            textSearch.Text = "Scary Terry";
             // 
             // label1
             // 

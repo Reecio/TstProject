@@ -1,0 +1,34 @@
+﻿For this task I would also like you to use the repository (GitHub) to check in your changes.
+While you dont need to use it to do the below, its good to get an idea of how to use it and allows me to check your work from my PC as I can view your code remotely.
+i.e. if you have got to a certain point and you're stuck, you can check in what you have written and then ask me for help, I can then view it online or even download it if needed.
+
+Step 1:
+
+	Go to the ApiEngine and complete the GetCharacter method so it returns data correctly.
+
+	Use the following to help:
+		WebRequest.CreateHttp(<url as a string>) to configure how to collect the data from the API (i.e. its address)
+		GetResponse which is a a method of WebRequest.CreateHttp (this makes the call to the API as its been configured)
+		GetResponseStream which is a method of GetResponse (this allows you to read the content of the response)
+		implement a StreamReader to control how you read the ResponseStream, just want to ReadToEnd as we dont do anything fancy with the response
+		JsonNode to check the response is actually Json, use the Parse method of this class
+		Deserialise<MyClass> method of JsonNode to consume the Json string in to a class so you can handle it
+
+	Once you have completed this, go to Test Explorer (Should be a tab on the left, otherwise use the Test drop down from the top)
+	Run the tests and they should both be successful if you have done it right
+
+	While writing this method use the character name of "Scary Terry" as your guide, as this is what has been used in the test case
+	
+Step 2:
+
+	Now try the same again in SearchCharacters method, but now you have to handle the fact that some searches can have multiple results
+	Also think about how you would handle that in the Form (the User Interface) so they can cycle through the results
+	You can use the search of Summer while you're writing this, should give you 12 results
+
+Step 3:
+
+	If you manage both the above, add new properties to the character class
+	You want to add Status, Species, Episodes and Location
+	Add the properties one by one and in that order as the last 2 properties are progressively more difficult
+	Be wary of case as when deserialising the property name has to match exactly whats returned in the data or it will ignore it
+	Make sure you update the Form to show the new items you've added
