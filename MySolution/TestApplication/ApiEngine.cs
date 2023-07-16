@@ -11,7 +11,11 @@ namespace TestApplication
     {
         public static Character GetCharacter(string name)
         {
-            return new Character();
+            var character = new Character();
+
+            // Implement api call here
+
+            return character;
         }
     }
 }
