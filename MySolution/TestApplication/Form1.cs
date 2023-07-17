@@ -15,8 +15,11 @@ namespace TestApplication
 
             textName.Text = character.name;
             var test = new HttpClient();
-            var img = WebRequest.CreateHttp(character.image).GetResponse().GetResponseStream();
-            pictureBox1.Image = Image.FromStream(img);
+            if (!string.IsNullOrEmpty(character.image))
+            {
+                var img = WebRequest.CreateHttp(character.image).GetResponse().GetResponseStream();
+                pictureBox1.Image = Image.FromStream(img);
+            }
         }
     }
 }

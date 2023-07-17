@@ -18,8 +18,26 @@ namespace TestApplication
             var character = new Character();
 
             // Implement api call here
+            var resquestStr = string.Format("https://rickandmortyapi.com/api/character/?name={0}", name);
+            try
+            {
+                var response = WebRequest.CreateHttp(resquestStr).GetResponse().GetResponseStream();
+                var store = new StreamReader(response);
+                var data = store.ReadToEnd();
+                var jsonData = JsonNode.Parse(data)["results"];
+                var K = jsonData.Deserialize<List<Character>>();
 
+                character.image = K.First().image;
+                character.name = K.First().name;
 
+            }
+            catch (Exception e)
+            {
+
+                
+            }
+
+            
             return character;
         }
 
