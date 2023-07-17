@@ -36,6 +36,7 @@
             textName = new TextBox();
             label3 = new Label();
             pictureBox1 = new PictureBox();
+            scrollBar = new HScrollBar();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -103,7 +104,7 @@
             label3.Name = "label3";
             label3.Size = new Size(47, 15);
             label3.TabIndex = 1;
-            label3.Text = "PIcture:";
+            label3.Text = "Picture:";
             // 
             // pictureBox1
             // 
@@ -113,11 +114,20 @@
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
+            // scrollBar
+            // 
+            scrollBar.Location = new Point(108, 280);
+            scrollBar.Name = "scrollBar";
+            scrollBar.Size = new Size(151, 53);
+            scrollBar.TabIndex = 5;
+            scrollBar.ValueChanged += scrollBar_ValueChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 499);
+            Controls.Add(scrollBar);
             Controls.Add(pictureBox1);
             Controls.Add(textName);
             Controls.Add(groupBox1);
@@ -142,5 +152,6 @@
         private TextBox textName;
         private Label label3;
         private PictureBox pictureBox1;
+        private HScrollBar scrollBar;
     }
 }
